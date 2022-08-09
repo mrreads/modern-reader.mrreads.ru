@@ -4,11 +4,45 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/style.scss">
     <title>Modern Reader</title>
   </head>
   <body>
-    <div id="app"> <h1>Modern Reader</h1> </div>
+
+    <div class="main">
+      <div class="container">
+        <img class="main-info__image image_1" src="/assets/images/1.png" alt="">
+        <div class="main-info">
+          <h1 class="main-info__heading">Modern Reader</h1>
+          <p class="main-info__text">A reading app built with electron.</p>
+          <p class="main-info__text" style="font-size: 16px">Currently in early develop.</p>
+          <a class="main-info__button" href="https://github.com/mrreads/modern-reader/releases" target="_blank">Download beta (for windows & linux)</a>
+          <a class="main-info__link" href="https://github.com/mrreads/modern-reader/" target="_blank">It’s free and open source.</a>
+          <hr style="height: 750px">
+        </div>
+      </div>
+     </div>
+
+     <div class="features">
+      <div class="container">
+        <div class="feature">Multiplatform</div>
+        <div class="feature">Multulanguage</div>
+        <div class="feature">Open-Source</div>
+        <div class="feature">Modern design</div>
+      </div>
+     </div>
+     
+     <div class="main right">
+      <div class="container">
+        <img class="main-info__image image_2" src="/assets/images/2.png" alt="">
+        <div class="main-info">
+          <h1 class="main-info__heading">Multiformat support.</h1>
+          <p class="main-info__text">txt, fbx, fb2, epub</p>
+          <hr style="height: 350px">
+        </div>
+      </div>
+     </div>
+     
     <script type="module" src="/assets/scripts/index.js"></script>
   </body>
 </html>

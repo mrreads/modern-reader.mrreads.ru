@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Ubuntu:wght@400;700&display=swap');
+
+$title-color: #161616;
+$text-color: #292a2d;
+
+$main-color: #610C63;
+$main-color-hover: #7c0e7e;
+
+$backgroud-color: #edf2f4;
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    min-width: 280px;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+
+    background-color: $backgroud-color;
+    min-height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 50px;
+    width: 100%;
+}
+
+body, p, input, button, textarea, a {
+    color: $text-color;
+    font-family: 'Comfortaa', cursive;
+    font-size: 19px;
+    line-height: 1.4;
+}
+  
+h1, h2, h3, h4, h5, h6 {
+    color: $title-color;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.main {
+    & hr {
+        opacity: 0;
+    }
+    
+    & .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: flex-start;
+
+        min-height: calc(100vh - 100px);
+    }
+
+    & .main-info {
+        margin-top: 300px;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-self: baseline;
+
+        &__heading {
+            font-size: 56px;
+            text-align: center;
+            line-height: 0.7;
+            margin-bottom: 25px;
+        }
+        &__text {
+            font-size: 19px;
+            text-align: center;
+        }
+        &__image {
+            margin-right: 150px;
+            width: 750px;
+        }
+        &__button {
+            border-radius: 30px;
+            padding: 13px 35px;
+            padding-top: 15px;
+            margin: 10px auto;
+            margin-top: 25px;
+            color: $backgroud-color;
+            width: max-content;
+            background-color: #292a2d;
+            text-align: center;
+            transition: .3s all;
+            &:hover {
+                background-color: #161616;
+            }
+        }
+        &__link {
+            font-size: 14px;
+            text-align: center;
+            margin: 0 auto;
+            transition: .3s all;
+            &:hover {
+                color: #292a2d;
+            }
+        }
+    }
+
+    &.right {
+        & .container {
+            flex-flow: row-reverse nowrap;
+        }
+        & .main-info {
+            &__image {
+                margin-right: 0;
+                margin-left: 150px;
+            }
+        }
+    }
+
+    margin-bottom: 25px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    .main .container {
+        min-height: 900px;
+    }
+}
+
+
+.main .main-info__image {
+    position: sticky;
+    top: 150px;
+}
+
+.features {
+    margin-bottom: 25px;
+    & .container {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 15px;
+        .feature {
+            font-family: 'Ubuntu', sans-serif;
+            border-radius: 25px;
+            font-size: 32px;
+            text-align: center;
+            padding: 38px 25px;
+            flex-grow: 1;
+            background-color: #b1b1b160;
+            cursor: pointer;
+
+            transition: 1s all;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.image_1, .image_2 {
+    transition: .3s all;
+}
+
+@media screen and (max-width: 1440px) {
+    .main .main-info__image {
+        width: 650px;
+    }
+    .features .container .feature {
+        font-size: 28px;
+        padding: 30px 25px;
+    }
+    .main {
+        & .main-info {
+           &__image {
+            margin-right: 50px;
+           }
+        }
+        &.right {
+            & .main-info {
+                &__image {
+                    margin-right: 0;
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main .main-info__image {
+        width: 500px;
+    }
+    .features .container .feature {
+        font-size: 27px;
+        padding: 25px 25px;
+    }
+    .features .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        padding: 0 25px;
+    }
+    .main .main-info__image {
+        width: 600px;
+    }
+    .main .container, .main.right .container {
+        flex-flow: column nowrap;
+    }
+    .main .main-info, .main.right .main-info {
+        order: -1;
+        margin-top: 150px;
+        align-self: center;
+        & hr {
+            height: 50px !important;
+        }
+    }
+    .features .container {
+        margin-top: 25px;
+    }
+    .main.right .main-info {
+        margin-top: 20px; 
+    }
+    .main .main-info__image, .main.right .main-info__image {
+        position: static;
+        margin: 0 auto;
+    }
+    .features .container .feature {
+        font-size: 26px;
+        padding: 15px 25px;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .main .main-info__image {
+        width: 500px;
+    }
+    .features .container .feature {
+        font-size: 23px;
+        padding: 10px 25px;
+        border-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main .main-info__image {
+        width: 400px;
+    }
+    .features .container .feature {
+        font-size: 18px;
+        padding: 10px 25px;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container {
+        padding: 0;
+    }
+    .main .main-info__heading {
+        padding: 0 15px;
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+    .main .main-info__text {
+        font-size: 16px;
+    }
+    .main .main-info__image {
+        width: calc(100% - 50px);
+    }
+    .features .container {
+        display: flex;
+        gap: 5px;
+        flex-flow: column nowrap;
+        & .feature {
+            font-size: 19px;
+            border-radius: 0;
+        }
+    }
+}

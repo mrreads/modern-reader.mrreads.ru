@@ -1,0 +1,35 @@
+name: Deploy to host
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'lts/*'
+      
+    - name: Build Project
+      run: |
+        npm install
+        npm run build
+    
+    - name: List output files
+      run: find build/ -print
+      
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.HOST }}
+        username: ${{ secrets.LOGIN }}
+        password: ${{ secrets.PASSWORD }}
+        local-dir: build/
+        server-dir: var/www/modern-reader.mrreads.ru/

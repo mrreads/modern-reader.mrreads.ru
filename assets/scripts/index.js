@@ -6,6 +6,12 @@ let elementOne = document.querySelector(".image_1");
 let containerTwo = document.querySelector(".main.right");
 let elementTwo = document.querySelector(".image_2");
 
+let containerThree = document.querySelector(".main.three");
+let elementThree = document.querySelector(".image_3");
+
+let containerFour = document.querySelector(".main.four");
+let elementFour = document.querySelector(".image_4");
+
 function transforms(x, y, el) {
   let box = el.getBoundingClientRect();
   let calcX = -(y - box.y - (box.height / 2)) / constrain;
@@ -36,4 +42,22 @@ containerTwo.onmousemove = function(e) {
     window.requestAnimationFrame(function(){
       transformElement(elementTwo, position);
     });
-  };
+};
+
+containerThree.onmousemove = function(e) {
+  let xy = [e.clientX, e.clientY];
+  let position = xy.concat([elementThree]);
+
+  window.requestAnimationFrame(function(){
+    transformElement(elementThree, position);
+  });
+};
+
+containerFour.onmousemove = function(e) {
+  let xy = [e.clientX, e.clientY];
+  let position = xy.concat([elementFour]);
+
+  window.requestAnimationFrame(function(){
+    transformElement(elementFour, position);
+  });
+};

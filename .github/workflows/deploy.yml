@@ -34,6 +34,6 @@ jobs:
         remote-host: ${{ secrets.HOST }}
         remote-user: ${{ secrets.USERNAME }}
         remote-password: ${{ secrets.PASSWORD }}
-        local-path: "/dist/*"
+        local-path: "./dist"
         remote-path: "/var/www/modern-reader.mrreads.ru"
         sync: "full"

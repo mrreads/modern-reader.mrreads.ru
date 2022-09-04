@@ -36,4 +36,4 @@ jobs:
         remote-password: ${{ secrets.PASSWORD }}
         local-path: "./dist"
         remote-path: "/var/www/modern-reader.mrreads.ru"
-        sync: "full"
+        sync: "delta"
